@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+html, body {
+  background: #f8fafc; /* Premium eye-safe off-white background */
+  color: #0f172a; /* Slate 900 for high-contrast crisp readability */
+  font-family: var(--font-sans);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Custom gorgeous scrollbar styled for clean theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.08);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.18);
+}
+
+.chip {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full border border-slate-200 bg-slate-50 text-slate-600 shadow-sm transition-all duration-200 hover:bg-slate-100 hover:text-slate-800;
+}
+
+.chip.active {
+  @apply bg-slate-900 border-slate-900 text-white;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl text-slate-700 bg-white border border-slate-200 shadow-sm transition-all duration-200 hover:bg-slate-50 hover:text-slate-900 active:scale-95 cursor-pointer disabled:opacity-45 disabled:cursor-not-allowed;
+}
+
+.btn.primary {
+  @apply bg-slate-900 border-slate-900 text-white hover:bg-slate-800 shadow-md;
+}
+
+.btn.sm {
+  @apply px-3 py-1.5 text-[11px] rounded-lg;
+}
+
+.btn.ghost {
+  @apply bg-transparent border-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900 shadow-none;
+}
